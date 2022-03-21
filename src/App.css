@@ -1,0 +1,111 @@
+/* dark: #0B0D17
+DARK: 11,13,23
+ light: #D0D6F9
+ LIGHT: 208,214,249
+ white: #FFFFFF 
+ WHITE: 255,255,255
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+
+:root {
+  --dark: #0b0d17;
+  --DARK: 11, 13, 23;
+  --light: #d0d6f9;
+  --LIGHT: 208, 214, 249;
+  --white: #ffffff;
+  --WHITE: 255, 255, 255;
+
+  --H1: 150px;
+  --H2: 100px;
+  --H3: 56px;
+  --H4: 32px;
+  --H5: 28px;
+
+  --SH1: 28px;
+  --SH2: 14px;
+
+  --NavText: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bellefair', serif;
+  color: var(--white);
+}
+
+/* *******NAVBAR******* */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 0rem 2rem 5rem;
+  width: 100vw;
+}
+
+.headerLogo {
+  align-self: center;
+  transform: scale(0.8);
+}
+
+.stroke {
+  position: relative;
+  height: 0.5px;
+  width: 50%;
+  background-color: var(--light);
+  opacity: 0.2;
+  align-self: center;
+  margin-right: -5rem;
+  z-index: 5;
+}
+
+.navbar ul {
+  /* position: relative; */
+  display: flex;
+  align-self: center;
+  justify-content: space-around;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40px);
+  width: max-content;
+  padding: 1.5rem 4rem;
+  font-family: 'Barlow Condensed', serif;
+  font-size: var(--NavText);
+  letter-spacing: 2.7px;
+  line-height: 19px;
+}
+
+.navbar ul li {
+  position: relative;
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.navSelected::before {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--white);
+}
+
+.navbar ul li:last-child {
+  padding-right: 5rem;
+}
+
+.home {
+  background: url(./assets/home/background-home-desktop.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.contentSection {
+}
