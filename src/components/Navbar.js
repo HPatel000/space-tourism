@@ -8,16 +8,24 @@ const Navbar = () => {
       <div className='stroke'>.</div>
       <ul>
         <li className='navSelected'>
-          <b>00</b> Home
+          <a href='#'>
+            <b>00</b> Home
+          </a>
         </li>
         <li>
-          <b>01</b> Destination
+          <a href='#'>
+            <b>01</b> Destination
+          </a>
         </li>
         <li>
-          <b>02</b> Crew
+          <a href='#'>
+            <b>02</b> Crew
+          </a>
         </li>
         <li>
-          <b>03</b> Technology
+          <a href='#'>
+            <b>03</b> Technology
+          </a>
         </li>
       </ul>
     </nav>
