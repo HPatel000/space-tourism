@@ -1,12 +1,13 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+import React, { Fragment } from 'react'
+import Header from '../components/Header'
+import Destinations from './Destinations'
 
 const Home = () => {
   return (
-    <div className='home'>
-      <Navbar />
-      <div className='pageContent'>
-        <section className='contentSection'>
+    <div className='home__bg'>
+      <Header />
+      <div className='home'>
+        <section className='home__content'>
           <p className='H5'>So, you want to travel to</p>
           <p className='H1'>Space</p>
           <p className='normalText'>

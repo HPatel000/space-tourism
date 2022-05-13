@@ -1,11 +1,8 @@
-import React from 'react'
-import HeaderLogo from './HeaderLogo'
+import React, { Fragment } from 'react'
 
 const Navbar = () => {
   return (
     <nav className='navbar'>
-      <HeaderLogo />
-      <div className='stroke'>.</div>
       <ul>
         <li className='navSelected'>
           <a href='#'>
