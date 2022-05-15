@@ -52,11 +52,13 @@ a {
 
 .H2 {
   font-size: var(--H2);
+  color: var(--white);
   text-transform: uppercase;
 }
 
 .H3 {
   font-size: var(--H3);
+  color: var(--white);
   text-transform: uppercase;
 }
 
@@ -156,7 +158,7 @@ a {
   height: 3px;
   background-color: rgba(var(--WHITE), 0.5);
   transform: scale(0);
-  transition: transform 0.2s ease-in-out 0.1s;
+  transition: transform 0.2s ease-in-out 0.2s;
 }
 
 .navbar ul li a:hover::before {
@@ -202,16 +204,50 @@ a {
   display: flex;
   justify-content: space-between;
   color: rgba(var(--LIGHT), 40%);
+
   font-size: 3rem;
-  /* list-style: none; */
-  /* background-color: rgba(255, 255, 255, 0.04); */
-  /* backdrop-filter: blur(40px); */
-  /* width: max-content; */
-  /* padding: 0rem 0.5rem; */
+}
+
+.crew__nav ul li {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out 0.05s;
+}
+
+.crew__nav ul li:hover {
+  color: rgba(var(--LIGHT), 80%);
 }
 
 .crew__navSelected {
   color: var(--light);
+}
+
+.tech__nav ul {
+  list-style: none;
+}
+
+.tech__nav ul li {
+  font-size: 1rem;
+  height: 3rem;
+  width: 3rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(var(--LIGHT), 40%);
+  padding: 1rem;
+  padding-left: 1.3rem;
+  border-radius: 100%;
+  transition: border 0.2s ease-in-out 0.1s;
+  cursor: pointer;
+}
+
+.tech__nav ul li:hover {
+  border: 1px solid var(--light);
+}
+
+.tech__navSelected {
+  background-color: var(--light);
+}
+
+.tech__navSelected a {
+  color: var(--dark);
 }
 
 .title {
@@ -239,9 +275,17 @@ a {
   width: 100vw;
 }
 
+.tech__bg {
+  background: url(./assets/technology/background-technology-desktop.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
 .home,
 .dest,
-.crew {
+.crew,
+.tech {
   display: flex;
   justify-content: space-evenly;
   margin-top: 10rem;
@@ -254,15 +298,28 @@ a {
   gap: 15rem;
 }
 
+.tech {
+  justify-content: flex-start;
+}
+
 .home__content,
 .dest__content {
   align-self: center;
-  max-width: 45ch;
+  max-width: 50ch;
 }
 
 .crew__content {
   margin-top: 5rem;
   max-width: 60ch;
+}
+
+.tech__content {
+  align-self: flex-start;
+  margin-left: 10rem;
+  margin-top: 5rem;
+  max-width: 70ch;
+  display: flex;
+  gap: 2rem;
 }
 
 .explore {
@@ -299,11 +356,13 @@ a {
 }
 
 .dest,
-.crew {
+.crew,
+.tech {
   margin-top: 0;
 }
 
-.crew__content .H3 {
+.crew__content .H3,
+.tech__content .H3 {
   margin-top: 1rem;
   margin-bottom: 3rem;
 }
@@ -322,6 +381,12 @@ a {
   position: fixed;
   bottom: 0;
   height: 35rem;
+}
+
+.tech__img img {
+  position: fixed;
+  right: 0;
+  height: 30rem;
 }
 
 .dest__stroke {
