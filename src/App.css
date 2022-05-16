@@ -162,8 +162,8 @@ a {
 }
 
 .navSelected::before {
-    transform: scale(1);
-    background-color: var(--white);
+  transform: scale(1);
+  background-color: var(--white);
 }
 
 .nav__Link:hover::before {
@@ -173,8 +173,6 @@ a {
 .navbar ul li:last-child {
   margin-right: 5rem;
 }
-
-
 
 .sec__navbar {
   background-color: transparent;
@@ -187,9 +185,9 @@ a {
   margin-left: -1.5rem;
 }
 
-.sec__navbar ul li a {
+/* .sec__navbar ul li a {
   padding: 1rem 0;
-}
+} */
 
 .crew__nav {
   margin-top: 5rem;

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
             className={({ isActive }) =>
               isActive ? 'nav__Link navSelected' : 'nav__Link'
             }
-            to='/destination'
+            to='/destination?id=0'
           >
             <b>01</b> Destination
           </NavLink>

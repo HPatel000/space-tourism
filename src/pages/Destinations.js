@@ -1,13 +1,16 @@
-import React, { Fragment } from 'react'
-import moon from '../assets/destination/image-moon.png'
+import React from 'react'
 
 import data from '../assets/data.json'
-import Navbar from '../components/Navbar'
 import SecondaryNav from '../components/SecondaryNav'
 import Header from '../components/Header'
-console.log(data)
+import { useLocation } from 'react-router-dom'
 
 const Destinations = () => {
+  const search = useLocation().search
+
+  const id = new URLSearchParams(search).get('id')
+  const dataObj = data.destinations[id]
+
   return (
     <div className='dest__bg'>
       <Header />
@@ -18,26 +21,24 @@ const Destinations = () => {
       </div>
       <div className='dest'>
         <section className='dest__imgSec'>
-          <img src={moon} alt='Moon' />
+          <img
+            src={require(`../assets/destination/image-${dataObj.name.toLowerCase()}.png`)}
+            alt={dataObj.name}
+          />
         </section>
         <section className='dest__content'>
-          <SecondaryNav />
-          <p className='H2'>Moon</p>
-          <p className='normalText'>
-            See our planet as you’ve never seen it before. A perfect relaxing
-            trip away to help regain perspective and come back refreshed. While
-            you’re there, take in some history by visiting the Luna 2 and Apollo
-            11 landing sites.
-          </p>
+          <SecondaryNav id={id} />
+          <p className='H2'>{dataObj.name}</p>
+          <p className='normalText'>{dataObj.description}</p>
           <div className='dest__stroke'>.</div>
           <div className='dest__btm'>
             <div className='avg'>
               <p className='SH2'>Avg. distance</p>
-              <p className='SH1'>384,400 km</p>
+              <p className='SH1'>{dataObj.distance}</p>
             </div>
             <div className='est'>
               <p className='SH2'>Est travel time</p>
-              <p className='SH1'>3 days</p>
+              <p className='SH1'>{dataObj.travel}</p>
             </div>
           </div>
         </section>
