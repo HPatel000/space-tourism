@@ -31,7 +31,7 @@ const Crew = () => {
 
           <nav className='crew__nav'>
             <ul>
-              <li className='crew__navSelected'>
+              <li>
                 <a
                   className={`crew__navLink ${
                     id == 0 ? 'crew__navSelected' : ''

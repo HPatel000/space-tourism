@@ -1,8 +1,19 @@
 import React, { Fragment } from 'react'
 import Header from '../components/Header'
-import launchVehicle from '../assets/technology/image-launch-vehicle-portrait.jpg'
+import data from '../assets/data.json'
+import { useLocation } from 'react-router-dom'
+import img1 from '../assets/technology/image-launch-vehicle-portrait.jpg'
+import img2 from '../assets/technology/image-spaceport-portrait.jpg'
+import img3 from '../assets/technology/image-space-capsule-portrait.jpg'
 
 const Technology = () => {
+  const search = useLocation().search
+  const imgs = [img1, img2, img3]
+
+  let id = new URLSearchParams(search).get('id')
+  if (!id || id < 0 || id > 2) id = 0
+  const dataObj = data.technology[id]
+
   return (
     <div className='tech__bg'>
       <Header />
@@ -15,31 +26,46 @@ const Technology = () => {
         <section className='tech__content'>
           <nav className='tech__nav'>
             <ul>
-              <li className='tech__navSelected'>
-                <a href='#'>1</a>
+              <li>
+                <a
+                  className={`tech__navLink ${
+                    id == 0 ? 'tech__navSelected' : ''
+                  }`}
+                  href='/technology?id=0'
+                >
+                  1
+                </a>
               </li>
               <li>
-                <a href='#'>2</a>
+                <a
+                  className={`tech__navLink ${
+                    id == 1 ? 'tech__navSelected' : ''
+                  }`}
+                  href='/technology?id=1'
+                >
+                  2
+                </a>
               </li>
               <li>
-                <a href='#'>3</a>
+                <a
+                  className={`tech__navLink ${
+                    id == 2 ? 'tech__navSelected' : ''
+                  }`}
+                  href='/technology?id=2'
+                >
+                  3
+                </a>
               </li>
             </ul>
           </nav>
           <div>
             <p className='SH2'>The Terminology...</p>
-            <p className='H3'>Launch vehicle</p>
-            <p className='normalText'>
-              A launch vehicle or carrier rocket is a rocket-propelled vehicle
-              used to carry a payload from Earth's surface to space, usually to
-              Earth orbit or beyond. Our WEB-X carrier rocket is the most
-              powerful in operation. Standing 150 metres tall, it's quite an
-              awe-inspiring sight on the launch pad!
-            </p>
+            <p className='H3'>{dataObj.name}</p>
+            <p className='normalText'>{dataObj.description}</p>
           </div>
         </section>
         <section className='tech__img'>
-          <img src={launchVehicle} alt='douglas-hurley' />
+          <img src={imgs[id]} alt={dataObj.name} />
         </section>
       </div>
     </div>

@@ -44,7 +44,7 @@ const Navbar = () => {
             className={({ isActive }) =>
               isActive ? 'nav__Link navSelected' : 'nav__Link'
             }
-            to='/technology'
+            to='/technology?id=0'
           >
             <b>03</b> Technology
           </NavLink>

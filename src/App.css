@@ -185,6 +185,10 @@ a {
   margin-left: -1.5rem;
 }
 
+/* .sec__navbar ul li a {
+  padding: 1rem 0;
+} */
+
 .crew__nav {
   width: 10rem;
 }
@@ -192,28 +196,39 @@ a {
   display: flex;
   justify-content: space-between;
   list-style: none;
+  margin-top: 3rem;
 }
 
 .crew__navLink {
   cursor: pointer;
-  transition: color 0.2s ease-in-out 0.05s;
-  color: rgba(var(--LIGHT), 40%);
-  font-size: 7rem;
+  display: inline-block;
+  color: transparent;
+  /* font-size: 7rem; */
+  height: 1rem;
+  width: 1rem;
+  border: none;
+  border-radius: 100%;
+  transition: background-color 0.2s ease-in-out 0.05s;
+  background-color: rgba(var(--LIGHT), 40%);
 }
 
 .crew__navLink:hover {
-  color: rgba(var(--LIGHT), 80%);
+  background-color: rgba(var(--LIGHT), 80%);
 }
 
 .crew__navSelected {
-  color: var(--light);
+  background-color: var(--light);
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100%;
 }
 
 .tech__nav ul {
   list-style: none;
 }
 
-.tech__nav ul li {
+.tech__navLink {
+  display: block;
   font-size: 1rem;
   height: 3rem;
   width: 3rem;
@@ -226,16 +241,14 @@ a {
   cursor: pointer;
 }
 
-.tech__nav ul li:hover {
+.tech__navLink:hover {
   border: 1px solid var(--light);
 }
 
 .tech__navSelected {
   background-color: var(--light);
-}
-
-.tech__navSelected a {
   color: var(--dark);
+  font-weight: bold;
 }
 
 .title {
@@ -298,7 +311,7 @@ a {
 
 .crew__content {
   margin-top: 5rem;
-  max-width: 60ch;
+  max-width: 80ch;
 }
 
 .tech__content {
@@ -355,6 +368,10 @@ a {
   margin-bottom: 3rem;
 }
 
+.crew__content .normalText {
+  max-width: 45ch;
+}
+
 .dest__imgSec img {
   height: 20rem;
   width: 20rem;
@@ -370,6 +387,7 @@ a {
   position: fixed;
   bottom: 0;
   height: 35rem;
+  right: 10rem;
 }
 
 .tech__img img {
