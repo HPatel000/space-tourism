@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Header from '../components/Header'
-import Destinations from './Destinations'
 
 const Home = () => {
   return (

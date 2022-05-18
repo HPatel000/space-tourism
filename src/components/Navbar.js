@@ -33,7 +33,7 @@ const Navbar = () => {
             className={({ isActive }) =>
               isActive ? 'nav__Link navSelected' : 'nav__Link'
             }
-            to='/crew'
+            to='/crew?id=0'
           >
             <b>02</b> Crew
           </NavLink>

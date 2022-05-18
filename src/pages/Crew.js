@@ -1,8 +1,20 @@
 import React from 'react'
 import Header from '../components/Header'
-import crewImg from '../assets/crew/image-douglas-hurley.png'
+import data from '../assets/data.json'
+import { useLocation } from 'react-router-dom'
+import img1 from '../assets/crew/image-douglas-hurley.png'
+import img2 from '../assets/crew/image-mark-shuttleworth.png'
+import img3 from '../assets/crew/image-victor-glover.png'
+import img4 from '../assets/crew/image-anousheh-ansari.png'
 
 const Crew = () => {
+  const search = useLocation().search
+  const imgs = [img1, img2, img3, img4]
+
+  let id = new URLSearchParams(search).get('id')
+  if (!id || id < 0 || id > 3) id = 0
+  const dataObj = data.crew[id]
+
   return (
     <div className='crew__bg'>
       <Header />
@@ -13,33 +25,57 @@ const Crew = () => {
       </div>
       <div className='crew'>
         <section className='crew__content'>
-          <p className='H4'>commander</p>
-          <p className='H3'>Douglas Hurley</p>
-          <p className='normalText'>
-            Douglas Gerald Hurley is an American engineer, former Marine Corps
-            pilot and former NASA astronaut. He launched into space for the
-            third time as commander of Crew Dragon Demo-2.
-          </p>
+          <p className='H4'>{dataObj.role}</p>
+          <p className='H3'>{dataObj.name}</p>
+          <p className='normalText'>{dataObj.bio}</p>
 
           <nav className='crew__nav'>
             <ul>
               <li className='crew__navSelected'>
-                <a href='#'></a>
+                <a
+                  className={`crew__navLink ${
+                    id == 0 ? 'crew__navSelected' : ''
+                  }`}
+                  href='/crew?id=0'
+                >
+                  .
+                </a>
               </li>
               <li>
-                <a href='#'></a>
+                <a
+                  className={`crew__navLink ${
+                    id == 1 ? 'crew__navSelected' : ''
+                  }`}
+                  href='/crew?id=1'
+                >
+                  .
+                </a>
               </li>
               <li>
-                <a href='#'></a>
+                <a
+                  className={`crew__navLink ${
+                    id == 2 ? 'crew__navSelected' : ''
+                  }`}
+                  href='/crew?id=2'
+                >
+                  .
+                </a>
               </li>
               <li>
-                <a href='#'></a>
+                <a
+                  className={`crew__navLink ${
+                    id == 3 ? 'crew__navSelected' : ''
+                  }`}
+                  href='/crew?id=3'
+                >
+                  .
+                </a>
               </li>
             </ul>
           </nav>
         </section>
         <section className='crew__img'>
-          <img src={crewImg} alt='douglas-hurley' />
+          <img src={imgs[id]} alt={dataObj.name} />
         </section>
       </div>
     </div>

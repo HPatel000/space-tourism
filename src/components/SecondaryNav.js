@@ -8,7 +8,7 @@ const SecondaryNav = ({ id }) => {
         <li>
           <a
             className={`nav__Link ${id == 0 ? 'navSelected' : ''}`}
-            href='/destination/?id=0'
+            href='/destination?id=0'
           >
             MOON
           </a>
@@ -16,7 +16,7 @@ const SecondaryNav = ({ id }) => {
         <li>
           <a
             className={`nav__Link ${id == 1 ? 'navSelected' : ''}`}
-            href='/destination/?id=1'
+            href='/destination?id=1'
           >
             MARS
           </a>
@@ -24,7 +24,7 @@ const SecondaryNav = ({ id }) => {
         <li>
           <a
             className={`nav__Link ${id == 2 ? 'navSelected' : ''}`}
-            href='/destination/?id=2'
+            href='/destination?id=2'
           >
             EUROPA
           </a>
@@ -32,7 +32,7 @@ const SecondaryNav = ({ id }) => {
         <li>
           <a
             className={`nav__Link ${id == 3 ? 'navSelected' : ''}`}
-            href='/destination/?id=3'
+            href='/destination?id=3'
           >
             TITAN
           </a>
