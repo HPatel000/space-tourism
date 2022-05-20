@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import Header from '../components/Header'
 import data from '../assets/data.json'
 import { useLocation } from 'react-router-dom'
@@ -6,13 +6,49 @@ import img1 from '../assets/technology/image-launch-vehicle-portrait.jpg'
 import img2 from '../assets/technology/image-spaceport-portrait.jpg'
 import img3 from '../assets/technology/image-space-capsule-portrait.jpg'
 
+import img4 from '../assets/technology/image-launch-vehicle-landscape.jpg'
+import img5 from '../assets/technology/image-spaceport-landscape.jpg'
+import img6 from '../assets/technology/image-space-capsule-landscape.jpg'
+
 const Technology = () => {
   const search = useLocation().search
-  const imgs = [img1, img2, img3]
 
   let id = new URLSearchParams(search).get('id')
   if (!id || id < 0 || id > 2) id = 0
   const dataObj = data.technology[id]
+
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window
+    return {
+      width,
+      height,
+    }
+  }
+
+  function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState(
+      getWindowDimensions()
+    )
+
+    useEffect(() => {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions())
+      }
+
+      window.addEventListener('resize', handleResize)
+      return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
+    return windowDimensions
+  }
+
+  const { height, width } = useWindowDimensions()
+
+  let imgs = [img1, img2, img3]
+
+  if (width < 1200) {
+    imgs = [img4, img5, img6]
+  }
 
   return (
     <div className='tech__bg'>
