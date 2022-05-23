@@ -3,7 +3,7 @@ import React from 'react'
 const SecondaryNav = ({ id }) => {
   console.log('🚀 ~ file: SecondaryNav.js ~ line 4 ~ SecondaryNav ~ id', id)
   return (
-    <nav className='navbar sec__navbar'>
+    <nav className='sec__navbar'>
       <ul>
         <li>
           <a
