@@ -1,7 +1,9 @@
 import React from 'react'
 import Header from '../components/Header'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+  const navigate = useNavigate()
   return (
     <div className='home__bg'>
       <Header />
@@ -16,7 +18,12 @@ const Home = () => {
             world experience!
           </p>
         </section>
-        <button className='explore'>Explore</button>
+        <button
+          onClick={() => navigate('/destination?id=0')}
+          className='explore'
+        >
+          Explore
+        </button>
       </div>
     </div>
   )
