@@ -16,7 +16,7 @@ DARK: 11,13,23
   --white: #ffffff;
   --WHITE: 255, 255, 255;
 
-  --H1: 9rem;
+  --H1: clamp(6rem, 8vw + 1rem, 9.375rem);
   --H2: 6.25rem;
   --H3: 3.5rem;
   --H4: 2rem;
@@ -401,6 +401,10 @@ a {
     text-align: center;
   }
 
+  .header {
+    padding: 1rem 0 2rem 1rem;
+  }
+
   .stroke {
     display: none;
   }
@@ -410,11 +414,11 @@ a {
     position: fixed;
     top: 0;
     right: 0;
-    padding-left: 5rem;
+    padding-left: 3rem;
   }
   .navbar ul li,
   .sec__navbar ul li {
-    padding: 1rem 0;
+    padding: 0;
   }
   .nav__Link b {
     display: none;
@@ -520,10 +524,15 @@ a {
     text-align: center;
   }
 
+  .crew__img {
+    margin-top: 2rem;
+  }
+
   .crew__img img {
+    position: relative;
     height: 25rem;
     bottom: 0;
-    right: 30%;
+    right: 0;
   }
 
   .tech__nav ul {
@@ -578,19 +587,24 @@ a {
   .navbar {
     height: 100vh;
     z-index: 15;
-    padding: 0 35% 0 0;
+    padding: 0;
+    width: 80vw;
   }
 
   .navbar ul {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 5rem;
+    margin-top: min(10rem, 20vh);
+    width: 100%;
   }
 
   .navbar ul li {
     padding: 0;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 0;
+    width: 100%;
+    text-align: left;
+    padding-left: 2rem;
   }
 
   .navbar ul li:last-child {
@@ -599,6 +613,18 @@ a {
 
   .nav__Link b {
     display: contents;
+  }
+
+  .nav__Link {
+    width: 100%;
+  }
+
+  .navSelected {
+    border-right: 3px solid var(--white);
+  }
+
+  .nav__Link::before {
+    display: none;
   }
 
   .navHide .navbar {
