@@ -1,14 +1,13 @@
 import React from 'react'
 
-const SecondaryNav = ({ id }) => {
-  console.log('🚀 ~ file: SecondaryNav.js ~ line 4 ~ SecondaryNav ~ id', id)
+const SecondaryNav = ({ id, setId }) => {
   return (
     <nav className='sec__navbar'>
       <ul>
         <li>
           <a
             className={`nav__Link ${id == 0 ? 'navSelected' : ''}`}
-            href='/destination?id=0'
+            onClick={() => setId(0)}
           >
             MOON
           </a>
@@ -16,7 +15,7 @@ const SecondaryNav = ({ id }) => {
         <li>
           <a
             className={`nav__Link ${id == 1 ? 'navSelected' : ''}`}
-            href='/destination?id=1'
+            onClick={() => setId(1)}
           >
             MARS
           </a>
@@ -24,7 +23,7 @@ const SecondaryNav = ({ id }) => {
         <li>
           <a
             className={`nav__Link ${id == 2 ? 'navSelected' : ''}`}
-            href='/destination?id=2'
+            onClick={() => setId(2)}
           >
             EUROPA
           </a>
@@ -32,7 +31,7 @@ const SecondaryNav = ({ id }) => {
         <li>
           <a
             className={`nav__Link ${id == 3 ? 'navSelected' : ''}`}
-            href='/destination?id=3'
+            onClick={() => setId(3)}
           >
             TITAN
           </a>

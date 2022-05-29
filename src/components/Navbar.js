@@ -32,7 +32,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive ? 'nav__Link navSelected' : 'nav__Link'
               }
-              to='/destination?id=0'
+              to='/destination'
             >
               <b>01</b> Destination
             </NavLink>
@@ -43,7 +43,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive ? 'nav__Link navSelected' : 'nav__Link'
               }
-              to='/crew?id=0'
+              to='/crew'
             >
               <b>02</b> Crew
             </NavLink>
@@ -54,7 +54,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive ? 'nav__Link navSelected' : 'nav__Link'
               }
-              to='/technology?id=0'
+              to='/technology'
             >
               <b>03</b> Technology
             </NavLink>

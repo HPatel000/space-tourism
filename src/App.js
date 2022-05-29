@@ -11,9 +11,13 @@ const App = () => {
     <Fragment>
       <BrowserRouter>
         <Routes>
-          <Route exact path='/destination' element={<Destinations />} />
-          <Route exact path='/crew' element={<Crew />} />
-          <Route exact path='/technology' element={<Technology />} />
+          <Route
+            exact
+            path='/destination'
+            element={<Destinations destId={0} />}
+          />
+          <Route exact path='/crew' element={<Crew crewId={0} />} />
+          <Route exact path='/technology' element={<Technology techId={0} />} />
           <Route exact path='/' element={<Home />} />
           <Route path='*' element={<Home />} />
         </Routes>

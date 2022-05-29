@@ -18,10 +18,7 @@ const Home = () => {
             world experience!
           </p>
         </section>
-        <button
-          onClick={() => navigate('/destination?id=0')}
-          className='explore'
-        >
+        <button onClick={() => navigate('/destination')} className='explore'>
           Explore
         </button>
       </div>

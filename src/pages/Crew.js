@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import data from '../assets/data.json'
-import { useLocation } from 'react-router-dom'
 import img1 from '../assets/crew/image-douglas-hurley.png'
 import img2 from '../assets/crew/image-mark-shuttleworth.png'
 import img3 from '../assets/crew/image-victor-glover.png'
 import img4 from '../assets/crew/image-anousheh-ansari.png'
 
-const Crew = () => {
-  const search = useLocation().search
+const Crew = ({ crewId }) => {
+  const [id, setId] = useState(0)
+
+  useEffect(() => {
+    setId(crewId)
+  }, [crewId])
+
   const imgs = [img1, img2, img3, img4]
 
-  let id = new URLSearchParams(search).get('id')
-  if (!id || id < 0 || id > 3) id = 0
   const dataObj = data.crew[id]
 
   return (
@@ -36,7 +38,7 @@ const Crew = () => {
                   className={`crew__navLink ${
                     id == 0 ? 'crew__navSelected' : ''
                   }`}
-                  href='/crew?id=0'
+                  onClick={() => setId(0)}
                 >
                   .
                 </a>
@@ -46,7 +48,7 @@ const Crew = () => {
                   className={`crew__navLink ${
                     id == 1 ? 'crew__navSelected' : ''
                   }`}
-                  href='/crew?id=1'
+                  onClick={() => setId(1)}
                 >
                   .
                 </a>
@@ -56,7 +58,7 @@ const Crew = () => {
                   className={`crew__navLink ${
                     id == 2 ? 'crew__navSelected' : ''
                   }`}
-                  href='/crew?id=2'
+                  onClick={() => setId(2)}
                 >
                   .
                 </a>
@@ -66,7 +68,7 @@ const Crew = () => {
                   className={`crew__navLink ${
                     id == 3 ? 'crew__navSelected' : ''
                   }`}
-                  href='/crew?id=3'
+                  onClick={() => setId(3)}
                 >
                   .
                 </a>

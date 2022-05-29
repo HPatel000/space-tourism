@@ -1,20 +1,20 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import data from '../assets/data.json'
-import { useLocation } from 'react-router-dom'
 import img1 from '../assets/technology/image-launch-vehicle-portrait.jpg'
 import img2 from '../assets/technology/image-spaceport-portrait.jpg'
 import img3 from '../assets/technology/image-space-capsule-portrait.jpg'
-
 import img4 from '../assets/technology/image-launch-vehicle-landscape.jpg'
 import img5 from '../assets/technology/image-spaceport-landscape.jpg'
 import img6 from '../assets/technology/image-space-capsule-landscape.jpg'
 
-const Technology = () => {
-  const search = useLocation().search
+const Technology = ({ techId }) => {
+  const [id, setId] = useState(0)
 
-  let id = new URLSearchParams(search).get('id')
-  if (!id || id < 0 || id > 2) id = 0
+  useEffect(() => {
+    setId(techId)
+  }, [techId])
+
   const dataObj = data.technology[id]
 
   function getWindowDimensions() {
@@ -67,7 +67,7 @@ const Technology = () => {
                   className={`tech__navLink ${
                     id == 0 ? 'tech__navSelected' : ''
                   }`}
-                  href='/technology?id=0'
+                  onClick={() => setId(0)}
                 >
                   1
                 </a>
@@ -77,7 +77,7 @@ const Technology = () => {
                   className={`tech__navLink ${
                     id == 1 ? 'tech__navSelected' : ''
                   }`}
-                  href='/technology?id=1'
+                  onClick={() => setId(1)}
                 >
                   2
                 </a>
@@ -87,7 +87,7 @@ const Technology = () => {
                   className={`tech__navLink ${
                     id == 2 ? 'tech__navSelected' : ''
                   }`}
-                  href='/technology?id=2'
+                  onClick={() => setId(2)}
                 >
                   3
                 </a>

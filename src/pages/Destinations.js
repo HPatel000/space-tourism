@@ -1,20 +1,21 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
 import data from '../assets/data.json'
 import SecondaryNav from '../components/SecondaryNav'
 import Header from '../components/Header'
-import { useLocation } from 'react-router-dom'
 import img1 from '../assets/destination/image-moon.png'
 import img2 from '../assets/destination/image-mars.png'
 import img3 from '../assets/destination/image-europa.png'
 import img4 from '../assets/destination/image-titan.png'
 
-const Destinations = () => {
-  const search = useLocation().search
+const Destinations = ({ destId }) => {
+  const [id, setId] = useState(0)
+
+  useEffect(() => {
+    setId(destId)
+  }, [destId])
+
   const imgs = [img1, img2, img3, img4]
 
-  let id = new URLSearchParams(search).get('id')
-  if (!id || id < 0 || id > 3) id = 0
   const dataObj = data.destinations[id]
 
   return (
@@ -30,7 +31,7 @@ const Destinations = () => {
           <img src={imgs[id]} />
         </section>
         <section className='dest__content'>
-          <SecondaryNav id={id} />
+          <SecondaryNav id={id} setId={setId} />
           <p className='H2'>{dataObj.name}</p>
           <p className='normalText'>{dataObj.description}</p>
           <div className='dest__stroke'>.</div>
