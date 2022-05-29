@@ -16,7 +16,7 @@ DARK: 11,13,23
   --white: #ffffff;
   --WHITE: 255, 255, 255;
 
-  --H1: clamp(6rem, 8vw + 1rem, 9.375rem);
+  --H1: clamp(6rem, 10vw, 9rem);
   --H2: 6.25rem;
   --H3: 3.5rem;
   --H4: 2rem;
@@ -584,6 +584,7 @@ a {
     height: 3px;
     background-color: var(--light);
   }
+
   .navbar {
     height: 100vh;
     z-index: 15;
@@ -619,11 +620,11 @@ a {
     width: 100%;
   }
 
-  .navSelected {
+  .navbar .navSelected {
     border-right: 3px solid var(--white);
   }
 
-  .nav__Link::before {
+  .navbar .nav__Link::before {
     display: none;
   }
 
@@ -642,6 +643,10 @@ a {
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  .sec__navbar .nav__Link {
+    padding-bottom: 0.5rem;
   }
 
   .home,
